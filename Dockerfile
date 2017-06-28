@@ -6,6 +6,8 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     apt-get update -qq && \
     apt-get install -qqy --no-install-recommends curl procps \
                 transmission-daemon \
+                transmission-common \
+                transmission-cli \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     apt-get clean && \
     dir="/var/lib/transmission-daemon" && \
