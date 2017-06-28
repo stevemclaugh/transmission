@@ -113,3 +113,5 @@ else
                 $([[ ${NOAUTH:-""} ]] && echo '--no-auth' || echo "--auth \
                 --username ${TRUSER:-admin} --password ${TRPASSWD:-admin}")"
 fi
+
+cd $dir
