@@ -38,3 +38,4 @@ VOLUME ["/var/lib/transmission-daemon"]
 EXPOSE 9091 51413/tcp 51413/udp
 
 ENTRYPOINT ["transmission.sh"]
+
