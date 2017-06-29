@@ -9,6 +9,8 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
                 transmission-common \
                 transmission-cli \
                 wget \
+                unzip \
+                zip \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     apt-get clean && \
     dir="/var/lib/transmission-daemon" && \
