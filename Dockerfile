@@ -8,6 +8,7 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
                 transmission-daemon \
                 transmission-common \
                 transmission-cli \
+                wget \
                 $(apt-get -s dist-upgrade|awk '/^Inst.*ecurity/ {print $2}') &&\
     apt-get clean && \
     dir="/var/lib/transmission-daemon" && \
@@ -38,4 +39,3 @@ VOLUME ["/var/lib/transmission-daemon"]
 EXPOSE 9091 51413/tcp 51413/udp
 
 ENTRYPOINT ["transmission.sh"]
-
