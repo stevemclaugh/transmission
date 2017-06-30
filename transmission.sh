@@ -114,4 +114,3 @@ else
                 --username ${TRUSER:-admin} --password ${TRPASSWD:-admin}")"
 fi
 
-cd $dir
