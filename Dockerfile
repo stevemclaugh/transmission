@@ -18,11 +18,11 @@ RUN export DEBIAN_FRONTEND='noninteractive' && \
     mv $dir/.config/transmission-daemon $dir/info && \
     rmdir $dir/.config && \
     usermod -d $dir debian-transmission && \
-    [[ -d $dir/downloads ]] || mkdir -p $dir/downloads && \
+    [[ -d $dir/Downloads ]] || mkdir -p $dir/Downloads && \
     [[ -d $dir/incomplete ]] || mkdir -p $dir/incomplete && \
     [[ -d $dir/info/blocklists ]] || mkdir -p $dir/info/blocklists && \
     file="$dir/info/settings.json" && \
-    sed -i 's|\("download-dir":\) .*|\1 "'"$dir"'/downloads",|' $file && \
+    sed -i 's|\("download-dir":\) .*|\1 "'"$dir"'/Downloads",|' $file && \
     sed -i '/"blocklist-enabled"/a\    "dht-enabled": true,' $file && \
     sed -i '/"download-dir"/a\    "incomplete-dir": "'"$dir"'/incomplete",' \
                 $file && \
